@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Position property</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Small practice in using CSS position property</h1>
+  </header>
+
+  <main>
+    <nav>
+      <ul>
+        <li><a href="#one">Absolute</a></li>
+        <li><a href="#two">Relative</a></li>
+        <li><a href="#three">Fixed</a></li>
+        <li><a href="#four">Sticky</a></li>
+      </ul>
+    </nav>
+
+    <section id="one">
+      <h2>Header one</h2>
+
+      <p class="general-paragraph">
+        I start with basics.
+        <code>position: absolute;</code>
+        is a simple thing. Use
+        <code>top: [value];</code>
+        or other side's name to change where your element position itself.
+        If value is zero than it will placed in top left corner of the page. Use
+        <code>position: relative;</code>
+        on ancestor element to positon relative to it. See example below.
+      </p>
+
+      <div class="ancestor">
+        This is an ancestor element.
+        <div class="absolute">Absolute position relative to an ancestor element.</div>
+      </div>
+    </section>
+
+    <section id="two">
+      <h2>Header two</h2>
+
+      <p class="general-paragraph">
+        <code>position: relative;</code>
+        Element positioned according to normal flow of the document and then offset
+        <span>relative to itself</span>
+        based on values of
+        <code>top bottom</code>
+        and so on.
+      </p>
+      <p class="general-paragraph">
+        Divs are block-level elements that's why boxes below are not placed on the same line.
+      </p>
+
+      <div class="relative--shadow-example">
+        <p>
+          This is where box would have been placed if it didn't had <code>position:&nbsp;relative;</code>
+        </p>
+      </div>
+
+      <div class="relative">
+        <p>
+          This box has positon relative. Its css declarations include:
+          <code>
+            left:&nbsp;250px;
+          </code>
+        </p>
+      </div>
+    </section>
+
+    <section id="three">
+      <h2>Header three</h2>
+
+      <p class="general-paragraph">
+        <code>positon: fixed;</code>
+        it offsets relative to viewport and stays on screen even when we scroll. Box stuck to the right side of the page
+        has this declaration.
+      </p>
+
+      <div class="fixed">This box has position: fixed. See third section to understand what is going on with it.</div>
+    </section>
+
+    <section id="four">
+      <h2>Header four</h2>
+
+      <p class="general-paragraph">
+        <code>position: sticky;</code>
+        This rule declaration made element stick to on of the sides of viewport. And we can make it offset. If I write
+        <code>bottom: 0;</code>
+        it will stay on bottom.
+        Headers and navigation menu on this page use this declaration. Notice how headers replace each other but
+        navigation menu stays on top. This happens because nav menu is part of <code>&lt;main&gt;</code> and headers are
+        part of their respective sections.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    This content licinsed under some CC licence. There could be links to information about me and my other projects but
+    it is not have physical form yet.
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="jen">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Variables and Functions</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <p>
+      Looks like we place variables inside <code>:root</code> pseudo-class.
+    </p>
+    <h2>Syntax and convinient way to organize styles</h2>
+    <p>
+      <code>
+        :root { <br>
+        <code>/* FONT */</code> <br>
+        <code>--FF: "Nunito" sans-serif;</code> <br>
+        <code>--FS: 1.5rem;</code> <br>
+        <code>--FS-HEADING: 4.5rem;</code> <br>
+        <br>
+        <code>/* COLOR */</code> <br>
+        <code>--VARIABLENAME: #000;</code> <br>
+        <code>--ALT-BGCOLOR: yellow;</code> <br>
+        <br>
+        <code>/* GENERAL */</code> <br>
+        <code>--PADDING: 0.5rem;</code> <br>
+        }
+      </code> <br>
+      <br>
+      <code>background-color: var(--VARIABLENAME);</code> <br>
+      <code>background-color: var(--ALT-BGCOLOR);</code> <br>
+      <code>font: var(--FS) var(--FF);</code> Notice absence of comma between vars. <br>
+    </p>
+    <h2>Notes</h2>
+    <p>
+      It's ok to use one variable value on two or more variables. <br>
+      For example: <br>
+      <code>--BGCOLOR: white;</code> <br>
+      <code>--LIGHT-COLOR: white;</code>
+    </p>
+    <h3>You can define variable using another variable</h3>
+    <img src="img/define variable using another variable.png"
+      alt="Code with an example defining variable using another variable">
+
+    <p>
+      You can redefine variable value. For example, redifine value for one of the classes.
+    </p>
+    <code>.green-color {
+      --BGCOLOR: green;
+      }
+    </code>
+
+    <h3></h3>
+    <img src="img/Min function with font size values.png"
+      alt="Code showing how can you define font size using min function">
+    <p>
+      Use <code>vh</code> (not <code>vw</code>) units to define font size. The code on the image translates to:
+    <p class="quote">
+      Define variable "FS". Variable value is min function which chooses minimum of two values: <code>2.25rem</code> and
+      <code>3vh</code>.
+    </p>
+    It's handy when you can set one biggest font and need to change it when viewport shrinks. It doesn't scales bigger
+    than 2.25rem.
+    <aside>
+      It is useful to set padding and/or margin to element to which you applied this function to <code>em</code> units.
+      That way padding and/or margin scales with font size.
+    </aside>
+    </p>
+    <p>
+      There is also <code>max()</code> function. You can think by yourself how it can be used to set up font size.
+    </p>
+    <p>
+      <code>font-size: clamp(1.75rem, 3vh, 2.25rem);</code> Clamp function chooses between three values. Second value is
+      best, first is min, third is max.
+    </p>
+    <p>There is <code>calc()</code> function. See MDN for description.</p>
+  </main>
+</body>
+
+</html>

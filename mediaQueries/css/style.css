@@ -1,0 +1,68 @@
+/* CSS reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* CSS reset end */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  display: grid;
+  place-content: center;
+  position: sticky;
+  background-color: black;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.square {
+  display: grid;
+  place-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  padding: 4rem;
+  border: 4px dashed whitesmoke;
+}
+
+@media screen and (min-width: 480px) {
+  .square {
+    background-color: red;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .square {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .square {
+    background-color: black;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .square {
+    background-color: purple;
+  }
+}
